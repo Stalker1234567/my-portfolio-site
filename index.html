@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>Bogdan Zarubin</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        
+        <section class="home_banner_area">
+            <div class="banner_inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="home_left_img">
+								<img src="img/banner/home-left-1.png" alt="">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="banner_content">
+								<h5>Java Developer</h5>
+								<h2>Bogdan Zarubin</h2>
+								<p>
+									This is the DEMO version of my portfolio site.In the future, I will write a small article with an autobiography. Tip: Click on the button labeled "PDF" to open the resume.
+								</p>
+								<a class="banner_btn" href="tg://resolve?domain=Jblanki">Contacts</a>
+								<a class="banner_btn_two" href="not_found/index.html">More details</a>
+								<ul class="cont">
+									<a href="https://www.linkedin.com/in/bogdan-zarubin-9a5639269/"><li class="one-button">
+									  <i class="fa fa-linkedin fa-2x"></i>
+									</li></a>
+									<a href="https://github.com/Stalker1234567"><li class="one-button">
+									  <i class="fa fa-github fa-2x"></i>
+									</li></a>
+									<a href="mailto:programmdevjava1@gmail.com"><li class="one-button">
+									  <i class="fa fa-google fa-2x"></i>
+									</li></a>
+									<a href="Зарубин Богдан Романович.pdf"><li class="two-button">
+										<i class="fa fa-download fa-2x"> PDF</i>
+									</li></a>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+       
+        
+        <script>
+			let textBox = document.querySelector('.screen'),
+    text    = textBox.innerText,
+    newHTML = '';
+
+for(i = 0; i < text.length; i++){
+    newHTML += '<span>'+text[i]+'<span>';
+}
+textBox.innerHTML = newHTML;
+
+let spans   = textBox.querySelectorAll('span'),
+    count   = 0,
+    timeout = 0;
+
+function typing_text(){
+    spans[count].classList.add('visible');
+    if(spans[count].innerText == ' ' || spans[count].innerHTML == ' '){
+        timeout = Math.floor(Math.random() * Math.floor(10));
+        spans[count].classList.add('cursor');
+    }else{
+        timeout = 50;
+    }
+
+    if (count < text.length - 1){
+        setTimeout(() => {
+            spans[count].classList.remove('cursor');
+            count ++;
+            typing_text();
+        }, timeout);
+    }
+}
+typing_text();
+		</script>
+
+    </body>
+</html>
